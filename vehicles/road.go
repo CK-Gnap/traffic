@@ -23,7 +23,6 @@ func (road *Road) VehiclesIn(vehicles []Vehicle) int {
 	for _, vehicle := range vehicles {
 		_ = vehicle.Start()
 		_ = vehicle.Drive()
-		// _ = vehicle.SpeedUp()
 		road.Vehicles = append(road.Vehicles, vehicle)
 		len++
 	}
@@ -58,7 +57,6 @@ func (road *Road) VehiclesOut() int {
 		_ = vehicle.Start()
 		_ = vehicle.Drive()
 		_ = vehicle.SpeedUp()
-		// _ = vehicle.SpeedDown()
 		road.RemoveVehicle(index)
 		len++
 	}
@@ -70,7 +68,7 @@ func (road *Road) VehiclesOutWaitingToStop() {
 	log.Printf(">>>>>> Vehicles Stop on %s Road <<<<<<\n", road.Name)
 	for index, vehicle := range road.Vehicles {
 		_ = vehicle.Start()
-		// _ = vehicle.Drive()
+		_ = vehicle.Drive()
 		_ = vehicle.SpeedDown()
 		_ = vehicle.Stop()
 		road.RemoveVehicle(index)
@@ -80,8 +78,7 @@ func (road *Road) VehiclesOutStop() {
 	log.Printf(">>>>>> Vehicles Stop %s Road <<<<<<\n", road.Name)
 	for index, vehicle := range road.Vehicles {
 		_ = vehicle.Start()
-		// _ = vehicle.Drive()
-		// _ = vehicle.SpeedDown()
+		_ = vehicle.SpeedDown()
 		_ = vehicle.Stop()
 		road.RemoveVehicle(index)
 	}
