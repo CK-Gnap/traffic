@@ -97,11 +97,11 @@ func (road *Road) ExportVehicles(trafficLightOut int) (int, error) {
 
 func getTrafficLightColor(value int) string {
 	var color string
-	if value == 1 {
+	if value == GREEN {
 		color = "Green"
-	} else if value == 2 {
+	} else if value == YELLOW {
 		color = "Yellow"
-	} else if value == 3 {
+	} else if value == RED {
 		color = "Red"
 	} else {
 		color = "Out of range"
